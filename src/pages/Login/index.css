@@ -1,0 +1,19 @@
+.login-view{
+    height: 100%;
+    width: 100%;
+    background-image: url(../../assets/zly.jpeg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-view{
+    width:520px;
+    background-color: #fff;
+    display: flex;
+}
+.container-view img{
+    width:240px;
+}
+.container-view Form{
+    margin-top:40px;
+}
