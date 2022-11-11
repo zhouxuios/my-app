@@ -8,10 +8,32 @@ import {
   } from '@ant-design/icons';
 import React,{useState} from 'react'
 import './index.css'
-import { Outlet } from 'react-router-dom';
+import { Outlet,useLocation,useNavigate} from 'react-router-dom';
 const {Header,Sider,Content} = Layout
-const ComomonLayout = () => {
+const ComomonLayout = (props) => {
     const [collapsed,setCollapsed] = useState(false);
+    const items = [
+      {
+        key:'/nav1',
+        icon:<UserOutlined />,
+        label: 'nav1',
+      },
+      {
+        key:'/nav2',
+        icon:<VideoCameraOutlined />,
+        label: 'nav2',
+      },
+      {
+        key:'/nav3',
+        icon:<UploadOutlined />,
+        label: 'nav3',
+      }
+    ]
+    const location = useLocation()
+    const navigate = useNavigate()
+    const onClickHandle = (e) => {
+       navigate(e.key)
+    };
     return (
       <Layout className='main'>
         <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -19,24 +41,9 @@ const ComomonLayout = () => {
             <Menu
                 theme='dark'
                 mode='inline'
-                defaultSelectedKeys={['1']}
-                items={[
-                    {
-                        key:'1',
-                        icon:<UserOutlined />,
-                        label: 'nav 1',
-                    },
-                    {
-                        key:'2',
-                        icon:<VideoCameraOutlined />,
-                        label: 'nav 2',
-                    },
-                    {
-                        key:'3',
-                        icon:<UploadOutlined />,
-                        label: 'nav 3',
-                    }
-                ]}
+                defaultSelectedKeys={[location.pathname]}
+                items={items}
+                onClick={onClickHandle}
             />
         </Sider>
         <Layout className='site-layout'>
