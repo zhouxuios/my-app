@@ -8,12 +8,28 @@
 }
 .container-view{
     width:520px;
-    background-color: #fff;
+    /* background-color: #fff; */
     display: flex;
+    margin-left: -10%;
 }
 .container-view img{
     width:240px;
 }
-.container-view Form{
-    margin-top:40px;
+.container-view .form{
+    padding: 0 20px;
+}
+.container-view .form .ant-input,.ant-input-affix-wrapper{
+    background-color: transparent;
+    border-color: #1890ff;
+    color: #1890ff;
+
+}
+.container-view .form input::-webkit-input-placeholder{
+    color: rgba(24, 144, 255, 0.6);
+}
+.ant-input-password-icon.anticon{
+    color: rgba(24, 144, 255, 0.6);
+}
+.ant-input-password-icon.anticon :hover{
+    color: rgba(24, 144, 255, 0.6);
 }
