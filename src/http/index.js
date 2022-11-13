@@ -5,6 +5,10 @@ const instance = axios.create({
     timeout:20000
 })
 instance.interceptors.request.use( conf => {
+    const token = localStorage.getItem('my-app-token')
+    if(token){
+      conf.headers['Authorization'] = token
+    }
     return conf
 },err => {
     Promise.reject(err)
