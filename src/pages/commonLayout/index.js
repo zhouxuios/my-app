@@ -3,8 +3,8 @@ import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
     UploadOutlined,
-    UserOutlined,
     VideoCameraOutlined,
+    HomeOutlined
   } from '@ant-design/icons';
 import React,{useState} from 'react'
 import './index.css'
@@ -15,8 +15,8 @@ const ComomonLayout = (props) => {
     const items = [
       {
         key:'/nav1',
-        icon:<UserOutlined />,
-        label: 'nav1',
+        icon:<HomeOutlined />,
+        label: '概览',
       },
       {
         key:'/nav2',
